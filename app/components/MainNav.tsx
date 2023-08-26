@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { Category } from '@/type'
+import { Category } from '@/types'
 
 interface MainNavProps {
     data: Category[]

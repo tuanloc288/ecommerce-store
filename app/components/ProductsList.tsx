@@ -1,4 +1,4 @@
-import { Product } from "@/type"
+import { Product } from "@/types"
 import NoResult from "./ui/NoResult"
 import ProductCard from "./ui/ProductCard"
 
