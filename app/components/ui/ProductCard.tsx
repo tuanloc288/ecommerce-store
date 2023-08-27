@@ -9,6 +9,7 @@ import { Product } from "@/types"
 import IconButton from './IconButton'
 import Currency from './Currency'
 import usePreviewModal from '@/hooks/usePreviewModal'
+import useCart from '@/hooks/useCart'
 
 interface ProductCardProps {
     data: Product
@@ -19,16 +20,25 @@ const ProductCard: FC<ProductCardProps> = ({
 }) => {
     const router = useRouter()
     const previewModal = usePreviewModal()
+    const cart = useCart()
 
 
     const handleClick = () => {
         router.push(`/product/${data?.id}`)
     }
 
-    const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
-        event.stopPropagation()
+    // bc parent ele also has an onClick event (handleClick)
+    // so we have to stop propagation to parent onClick event like this
+    const onPreview: MouseEventHandler<HTMLButtonElement> = (e) => {
+        e.stopPropagation()
 
         previewModal.onOpen(data)
+    }
+
+    const onAddToCart: MouseEventHandler<HTMLButtonElement> = (e) => {
+        e.stopPropagation()
+
+        cart.addItem(data)
     }
 
     return (
@@ -49,7 +59,7 @@ const ProductCard: FC<ProductCardProps> = ({
                         />
                         <IconButton
                             className=''
-                            onClick={() => { }}
+                            onClick={onAddToCart}
                             icon={<ShoppingCart size={20} className='text-gray-600' />}
                         />
                     </div>
