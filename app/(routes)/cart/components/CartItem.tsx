@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState, useEffect } from 'react'
+import { FC } from 'react'
 import { toast } from 'react-hot-toast'
 import { X } from 'lucide-react'
 
@@ -21,6 +21,7 @@ const CartItem: FC<CartItem> = ({
 
     const onRemove = () => {
         cart.removeItem(data.id)
+        toast.success("Remove item successfully")
     }
     return (
         <li className='flex py-6 border-b'>
