@@ -17,8 +17,11 @@ Features:
 - Payment can be done by Stripe
 - Advanced search algorithm by size, color.
 - Fully customizable store content such as store name, billboard, category, product, color , size
-- Shareable URL filters: lets say you select a size and color as your desired, you will be able to share the URL with other people in another browser and they will see the same results as yours.
-- At this time you will have to change the home page billboard manualy by its id (can be copy to clipboard at admin dashboard -> billboard tab).
+- Shareable URL filters: lets say you select a size and color as your desire, you will be able to share the URL with other people in another browser and they will see the same results as yours.
+
+Note:
+
+- At this time if you want to change the home page billboard, you will have to do it manually by replacing the billboard id at getBillboard(billboardIdHere) on .../(routes)/page.tsx (billboard id can be copied to clipboard at admin dashboard -> billboard tab).
 - To change store, simply change the environment variable NEXT_PUBLIC_API_URL, this public api come from the store you have created using ecommerce-admin and it can be found on the settings tab.
 
 ### Prerequisites
