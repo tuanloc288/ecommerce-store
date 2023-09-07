@@ -16,7 +16,6 @@ Features:
 - Notification using react-hot-toast
 - Payment can be done by Stripe
 - Advanced search algorithm by size, color.
-- Fully customizable store content such as store name, billboard, category, product, color , size
 - Shareable URL filters: lets say you select a size and color as your desire, you will be able to share the URL with other people in another browser and they will see the same results as yours.
 
 Note:
